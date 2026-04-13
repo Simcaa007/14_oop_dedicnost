@@ -19,8 +19,9 @@ namespace _03
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Pracovnik p = new Pracovnik("kok", 45000, 2000, new DateTime(2010, 3,3);
-            MessageBox.Show(p.ToString());
+            Pracovnik p = new Pracovnik("kok", 45000, 2000, new DateTime(2010, 3,3));
+            StalyZamestnanec S = new StalyZamestnanec("kok", 25000, 3000, new DateTime(2010, 5, 14), 1000);
+            MessageBox.Show(p.ToString() + "\n" + S.ToString());
         }
     }
 }

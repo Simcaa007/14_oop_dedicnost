@@ -26,16 +26,17 @@ namespace _03
         {
             DateTime zkusebka = datumNastupu.AddMonths(3);
 
-            if (zkusebka >= DateTime.Now) return false;
-            else return true;
+            if (zkusebka >= DateTime.Now) return true;
+            else return false;
         }
 
-        public void HrubaMzda()
+        public virtual double HrubaMzda()
         {
             if (!ZkusebniDoba())
             {
-                ZakldniPlat += Premie;
+                return ZakldniPlat + Premie;
             }
+            else return ZakldniPlat;
         }
 
         public override string ToString()
@@ -43,7 +44,8 @@ namespace _03
             return $"pracovnik: {Jmeno}\n" +
                 $"plat: {ZakldniPlat}\n" +
                 $"premie: {Premie}\n" +
-                $"zkusebni doba: {(ZkusebniDoba() ? "ano" : "ne")}";
+                $"zkusebni doba: {(ZkusebniDoba() ? "ano" : "ne")}\n" +
+                $"hruba mzda: {HrubaMzda()}";
         }
     }
 }

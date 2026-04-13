@@ -16,7 +16,23 @@ namespace _03
             this.stabilizacniPrispevek = stab;
         }
 
+        public override double HrubaMzda()
+        {
+            DateTime vicenezdeset = datumNastupu.AddYears(10);
+            if (vicenezdeset > DateTime.Now)
+            {
+                return base.HrubaMzda() + stabilizacniPrispevek;
+            }
+            else
+            {
+                return base.HrubaMzda();
+            }
+        }
 
-
+        public override string ToString()
+        {
+            return base.ToString() + $"\n" +
+                $"";
+        }
     }
 }
